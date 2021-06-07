@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import Auth from './Auth';
-const Nav = () => {
+const Nav = (props) => {
     return (
             <nav className="container d-flex flex-column flex-md-row justify-content-between">
                 <NavLink className="py-2" to="/" aria-label="Product">
@@ -10,7 +10,7 @@ const Nav = () => {
                 <NavLink className="py-2 d-none d-md-inline-block" activeClassName="active" to="/">Trang Chủ</NavLink>
                 <NavLink className="py-2 d-none d-md-inline-block" activeClassName="active" to="/product">Sản Phẩm</NavLink>
                 <NavLink className="py-2 d-none d-md-inline-block" activeClassName="active" to="/category">Danh Mục</NavLink>
-                <Auth></Auth>
+                <Auth {...props}></Auth>
             </nav>
     )
 }

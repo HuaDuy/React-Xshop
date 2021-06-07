@@ -1,10 +1,10 @@
 import React from 'react'
 import Nav from './Nav';
 
-const Header = () => {
+const Header = (props) => {
     return (
             <header className="site-header sticky-top py-1">
-                <Nav></Nav>
+                <Nav {...props}></Nav>
             </header>
     )
 }

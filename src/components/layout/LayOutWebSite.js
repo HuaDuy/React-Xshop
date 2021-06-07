@@ -5,7 +5,7 @@ import Header from './Header'
 const LayOutWebSite = (props) => {
     return (
         <div>
-            <Header></Header>
+            <Header {...props}></Header>
             {props.children}
             <Footer></Footer>
         </div>

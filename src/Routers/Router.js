@@ -55,7 +55,7 @@ const Routers = (props) => {
                     </LayOutAdmin>
                 </Route>
                 <Route>
-                    <LayOutWebSite>
+                    <LayOutWebSite {...props}>
                         <Switch>
                             <Route path="/" exact> <HomePage {...props}></HomePage> </Route>
                             <Route path="/product" exact> <ProductPage></ProductPage> </Route>
