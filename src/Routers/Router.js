@@ -18,6 +18,7 @@ import EditProduct from '../Pages/EditProduct';
 import AdminCategories from '../Pages/AdminCategories';
 import AddCategories from '../Pages/AddCategories';
 import EditCategories from '../Pages/EditCategories';
+import AdminDashBoard from '../Pages/AdminDashBoard';
 
 const Routers = (props) => {
     return (
@@ -27,11 +28,11 @@ const Routers = (props) => {
                     <LayOutAdmin>
                         <Switch>
                             <Route exact path="/admin/dashboard">
-                                Dashboard Page
-                        </Route>
+                                <AdminDashBoard></AdminDashBoard>
+                            </Route>
                             <Route exact path="/admin/user">
                                 User Manager
-                        </Route>
+                            </Route>
                             <Route exact path="/admin/product">
                                 <AdminProduct {...props}></AdminProduct>
                             </Route>

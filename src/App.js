@@ -9,7 +9,6 @@ function App() {
   const [userName, setUserName] = useState('');
   useEffect(() => {
     const infoUser = localStorage.getItem('user') || false;
-    // /api/infoUser/asdasdasdas
     setUserName(infoUser);
   }, [userName]);
   
@@ -50,6 +49,16 @@ function App() {
       console.log(error)
     }
   }
+  
+  const onHandleRemoveCate = async (id) => {
+    try {
+      await CategoryApi.remove(id)
+      const newCategory = categories.filter(item => item._id !== id);
+      setCategory(newCategory)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const onHandleAddProduct = async (product) => {
     try {
@@ -64,6 +73,8 @@ function App() {
   const onHandleAddCate = async (cate) => {
     try {
       await CategoryApi.add(cate)
+      const { data: { data: categories } } = await CategoryApi.getAll();
+      setCategory(categories);
     } catch (error) {
       console.log(error)
     }
@@ -72,6 +83,8 @@ function App() {
   const onHandleEditProduct = async (id, product) => {
     try {
       await ProductApi.update(id, product)
+      const { data: { data: products } } = await ProductApi.getAll();
+      setProducts(products);
     } catch (error) {
       console.log(error)
     }
@@ -80,6 +93,8 @@ function App() {
   const onHandleEditCate = async (id, cate) => {
     try {
       await CategoryApi.update(id, cate)
+      const { data: { data: categories } } = await CategoryApi.getAll();
+      setCategory(categories);
     } catch (error) {
       console.log(error)
     }
@@ -96,6 +111,7 @@ function App() {
       onRemove={onHandleRemoveProduct}
       onAddCate={onHandleAddCate}
       onUpdateCate={onHandleEditCate}
+      onRemoveCate={onHandleRemoveCate}
     ></Routers>
   );
 }

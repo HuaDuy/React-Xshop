@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 const SideBar = () => {
     return (
         <div className="col-md-2 py-4 text-gray-500 dark:text-gray-400">
-            <a className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" to="#">
-                X-SmartPhone
-        </a>
+            <NavLink className="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" to="/admin/dashboard">
+                Trang Quản Trị
+        </NavLink>
             <ul>
                 <li className="relative px-6 py-3">
                     <NavLink className="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" to="/admin/product">
